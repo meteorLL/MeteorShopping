@@ -26,7 +26,7 @@ Page({
         //   url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
         //   success: (result) => {
         //     this.setData({
-        //       swiperList:result.data.message
+        //       swiperList:result
         //     })
         //     // console.log(this.data.swiperList);
 
@@ -40,26 +40,26 @@ Page({
 
     // 获取轮播图数据
     getSwiperList() {
-        request({ url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata' }).then(result => {
+        request({ url: '/home/swiperdata' }).then(result => {
             this.setData({
-                swiperList: result.data.message
+                swiperList: result
             })
         })
     },
     // 获取导航分类数组
     getCatesList() {
-        request({ url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems' }).then(result => {
+        request({ url: '/home/catitems' }).then(result => {
             // console.log(result);
             this.setData({
-                catesList: result.data.message
+                catesList: result
             })
         })
     },
     getFloorList() {
-        request({ url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata' }).then(result => {
+        request({ url: '/home/floordata' }).then(result => {
             console.log(result);
             this.setData({
-                floorList: result.data.message
+                floorList: result
             })
         })
     },
